@@ -87,9 +87,9 @@ class _WelcomePageState extends State<WelcomePage> {
       margin: EdgeInsets.only(bottom: lcBottomBarHeight),
       child: ElevatedButton(
         child: Text('get started'),
-        onPressed: () { 
-          print('点击了开始');
-         },
+        onPressed: () {
+          Navigator.of(context).pushNamed('/sign_in');
+        },
       ),
     );
   }
