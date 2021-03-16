@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_learn/common/utils/screen.dart';
-import 'package:flutter_app_learn/common/utils/validator.dart';
 import 'package:flutter_app_learn/common/values/colors.dart';
 import 'package:flutter_app_learn/common/values/shadows.dart';
 import 'package:flutter_app_learn/common/widgets/button.dart';
-import 'package:flutter_app_learn/common/widgets/toast.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_app_learn/common/widgets/input.dart';
 
@@ -21,20 +19,22 @@ class _SignInPageState extends State<SignInPage> {
 
   /// 执行登录操作
   _handleSignIn() {
-    if (_emailController.value.text.isEmpty) {
-      toastInfo(msg: '请输入邮件');
-      return;
-    }
+    // if (_emailController.value.text.isEmpty) {
+    //   toastInfo(msg: '请输入邮件');
+    //   return;
+    // }
 
-    if (!duIsEmail(_emailController.value.text)) {
-      toastInfo(msg: '请正确输入邮件');
-      return;
-    }
+    // if (!duIsEmail(_emailController.value.text)) {
+    //   toastInfo(msg: '请正确输入邮件');
+    //   return;
+    // }
 
-    if (!duCheckStringLength(_passwordController.value.text, 6)) {
-      toastInfo(msg: '密码不能小于6位');
-      return;
-    }
+    // if (!duCheckStringLength(_passwordController.value.text, 6)) {
+    //   toastInfo(msg: '密码不能小于6位');
+    //   return;
+    // }
+
+    Navigator.pushNamed(context, "/app");
   }
 
   /// 注册

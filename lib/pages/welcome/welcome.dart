@@ -3,6 +3,7 @@ import 'package:flutter_app_learn/common/utils/screen.dart';
 import 'package:flutter_app_learn/common/values/colors.dart';
 import 'package:flutter_app_learn/common/values/values.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:dio/dio.dart';
 
 class WelcomePage extends StatefulWidget {
   WelcomePage({Key key}) : super(key: key);
@@ -12,6 +13,16 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  void getHttp() async {
+    try {
+      Response response = await Dio().post(
+          "https://test.bazirim.life/mobile_app/index.php?bz_ctr=goods&bz_func=goods_list");
+      print('请求的数据---${response.data.toString()}');
+    } catch (e) {
+      print(e);
+    }
+  }
+
   /// 页头标题
   Widget _buildPageHeadTitle() {
     return Container(
@@ -88,6 +99,7 @@ class _WelcomePageState extends State<WelcomePage> {
       child: ElevatedButton(
         child: Text('get started'),
         onPressed: () {
+          //getHttp();
           Navigator.of(context).pushNamed('/sign_in');
         },
       ),

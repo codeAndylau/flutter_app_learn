@@ -1,3 +1,4 @@
+import 'package:flutter_app_learn/pages/application/application.dart';
 import 'package:flutter_app_learn/pages/sign_in/sign_in.dart';
 import 'package:flutter_app_learn/pages/sign_up/sign_up.dart';
 
@@ -12,4 +13,5 @@ import 'package:flutter_app_learn/pages/sign_up/sign_up.dart';
 var staticRouters = {
   "/sign_in": (content) => SignInPage(), // 登录
   "/sign_up": (context) => SignUpPage(), // 注册
+  "/app": (context) => ApplicationPage(), // 主程序
 };

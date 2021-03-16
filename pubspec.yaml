@@ -33,6 +33,15 @@ dependencies:
   # 吐司提示
   fluttertoast: ^7.1.6
 
+  # http
+  dio: 3.0.10 
+
+  # 加密
+  crypto: ^3.0.0
+
+  # 本地数据持久化
+  shared_preferences: ^2.0.4
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -72,7 +81,9 @@ flutter:
       fonts:
         - asset: assets/fonts/Montserrat-SemiBold.ttf
           weight: 600
-
+    - family: Iconfont
+      fonts:
+        - asset: assets/fonts/iconfont.ttf
   
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

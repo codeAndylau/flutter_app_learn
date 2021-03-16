@@ -1,17 +1,17 @@
-main(List<String> args) {
-  var t = new Television();
-  t.activate();
-  t.turnOn();
-}
+// main(List<String> args) {
+//   var t = new Television();
+//   t.activate();
+//   t.turnOn();
+// }
 
-class Television {
+// class Television {
 
-  @deprecated
-  void activate() {
-    turnOn();
-  }
+//   @deprecated
+//   void activate() {
+//     turnOn();
+//   }
 
-  void turnOn() {
-    print('on!');
-  }
-}
+//   void turnOn() {
+//     print('on!');
+//   }
+// }
