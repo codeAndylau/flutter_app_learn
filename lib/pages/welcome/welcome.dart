@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_learn/common/utils/screen.dart';
 import 'package:flutter_app_learn/common/values/colors.dart';
 import 'package:flutter_app_learn/common/values/values.dart';
+import 'package:flutter_app_learn/main.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:dio/dio.dart';
+import 'package:provider/provider.dart';
 
 class WelcomePage extends StatefulWidget {
   WelcomePage({Key key}) : super(key: key);
@@ -133,10 +135,29 @@ class _WelcomePageState extends State<WelcomePage> {
                   40,
                 ),
                 Spacer(),
-                _buildStarButton()
+                _buildStarButton(),
+                Spacer(),
+                Count()
               ]),
+            ),
+            floatingActionButton: FloatingActionButton(
+              onPressed: () {
+                context.read<Counter>().increment();
+              },
+              tooltip: '自增+1',
+              child: Icon(Icons.add),
             ),
           );
         });
+  }
+}
+
+class Count extends StatelessWidget {
+  const Count({Key key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    /// 调用的上下文。当[计数器]改变时，使[计数]重新生成。
+    String text = context.watch<Counter>().count.toString();
+    return Text(text, style: Theme.of(context).textTheme.headline4);
   }
 }
