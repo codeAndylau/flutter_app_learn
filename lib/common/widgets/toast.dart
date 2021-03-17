@@ -6,7 +6,7 @@ Future<bool> toastInfo({
   @required String msg,
   Toast toastLength = Toast.LENGTH_SHORT,
   ToastGravity gravity = ToastGravity.TOP,
-  Color backgroundColor = Colors.black,
+  Color backgroundColor = Colors.orange,
   Color textColor = Colors.white,
 }) {
   return Fluttertoast.showToast(

@@ -5,6 +5,18 @@ import 'package:flutter_app_learn/pages/welcome/welcome.dart';
 import 'package:flutter_app_learn/common/values/routers.dart';
 import 'package:provider/provider.dart';
 
+// void main() {
+//   Global.init().then((value) {
+//     runApp(MultiProvider(
+//       providers: [
+//         ChangeNotifierProvider(create: (context) => Counter())
+//         ],
+//         child: MyApp(),
+//     ));
+//   });
+// }
+
+/// 程序入口
 void main() => Global.init().then((value) => runApp(MultiProvider(
     providers: [ChangeNotifierProvider(create: (context) => Counter())],
     child: MyApp())));

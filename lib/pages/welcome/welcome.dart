@@ -15,6 +15,7 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  /// 测试http数据请求
   void getHttp() async {
     try {
       Response response = await Dio().post(
@@ -137,7 +138,8 @@ class _WelcomePageState extends State<WelcomePage> {
                 Spacer(),
                 _buildStarButton(),
                 Spacer(),
-                Count()
+                Count(),
+                SizedBox(height: 35)
               ]),
             ),
             floatingActionButton: FloatingActionButton(

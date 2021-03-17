@@ -36,7 +36,7 @@ class _ApplicationPageState extends State<ApplicationPage>
     BottomNavigationBarItem(
         icon: Icon(Icons.home),
         activeIcon: Icon(Icons.home),
-        label: "首页",
+        label: "home",
         tooltip: '兄弟,这是首页!'),
     BottomNavigationBarItem(
         icon: Icon(Iconfont.grid),
@@ -126,8 +126,6 @@ class _ApplicationPageState extends State<ApplicationPage>
       currentIndex: _selectedIndex,
       selectedItemColor: Colors.amber[800],
       onTap: _onItemTapped,
-      //showSelectedLabels: false,
-      //showUnselectedLabels: false,
     );
   }
 

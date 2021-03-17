@@ -19,7 +19,20 @@ class _SignUpPageState extends State<SignUpPage> {
 
   // logo
   Widget _buildLogo() {
-    return Container();
+    return Container(
+      margin: EdgeInsets.only(top: 50.h),
+      child: Text(
+        "Sign up",
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          color: AppColors.primaryText,
+          fontFamily: "Montserrat",
+          fontWeight: FontWeight.w600,
+          fontSize: 24.ssp,
+          height: 1,
+        ),
+      ),
+    );
   }
 
   // 注册表单
@@ -155,7 +168,8 @@ class _SignUpPageState extends State<SignUpPage> {
       margin: EdgeInsets.only(bottom: 35.h),
       child: btnFlatButtonWidget(
         onPressed: () {
-          Navigator.of(context).pop();
+          // Navigator.of(context).pop();
+          Navigator.of(context).pushNamed("/app");
         },
         width: 294,
         gbColor: AppColors.secondaryElement,
@@ -171,14 +185,22 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: transparentAppBar(context: context, actions: [
-        IconButton(
-            color: AppColors.primaryText,
-            icon: Icon(Icons.info_outline),
-            onPressed: () {
-              toastInfo(msg: '点击了分享按钮');
-            })
-      ]),
+      appBar: transparentAppBar(
+          context: context,
+          leading: IconButton(
+              color: Colors.black,
+              icon: Icon(Icons.arrow_back_ios),
+              onPressed: () {
+                Navigator.of(context).pop();
+              }),
+          actions: [
+            IconButton(
+                color: Colors.black,
+                icon: Icon(Icons.info_outline),
+                onPressed: () {
+                  toastInfo(msg: '点击了分享按钮');
+                })
+          ]),
       body: Center(
         child: Column(
           children: <Widget>[
