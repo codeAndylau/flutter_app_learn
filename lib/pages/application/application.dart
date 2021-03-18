@@ -55,19 +55,11 @@ class _ApplicationPageState extends State<ApplicationPage>
         backgroundColor: AppColors.primaryBackground)
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      _pageController.animateToPage(index,
-          duration: const Duration(milliseconds: 200), curve: Curves.ease);
-    });
-  }
-
   // tab栏动画
-  void _handleNavBarTap(int index) {
-    _pageController.animateToPage(index,
-        duration: const Duration(milliseconds: 200), curve: Curves.ease);
-  }
+  // void _handleNavBarTap(int index) {
+  //   _pageController.animateToPage(index,
+  //       duration: const Duration(milliseconds: 200), curve: Curves.ease);
+  // }
 
   // tab栏页码切换
   void _handlePageChanged(int index) {
@@ -125,7 +117,13 @@ class _ApplicationPageState extends State<ApplicationPage>
       items: _bottomTabs,
       currentIndex: _selectedIndex,
       selectedItemColor: Colors.amber[800],
-      onTap: _onItemTapped,
+      onTap: (index) {
+        setState(() {
+          _selectedIndex = index;
+          _pageController.animateToPage(index,
+              duration: const Duration(milliseconds: 200), curve: Curves.ease);
+        });
+      },
     );
   }
 

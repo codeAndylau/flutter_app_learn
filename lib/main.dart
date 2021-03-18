@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_learn/common/values/global.dart';
@@ -5,21 +6,19 @@ import 'package:flutter_app_learn/pages/welcome/welcome.dart';
 import 'package:flutter_app_learn/common/values/routers.dart';
 import 'package:provider/provider.dart';
 
-// void main() {
-//   Global.init().then((value) {
-//     runApp(MultiProvider(
-//       providers: [
-//         ChangeNotifierProvider(create: (context) => Counter())
-//         ],
-//         child: MyApp(),
-//     ));
-//   });
-// }
-
 /// 程序入口
-void main() => Global.init().then((value) => runApp(MultiProvider(
-    providers: [ChangeNotifierProvider(create: (context) => Counter())],
-    child: MyApp())));
+// void main() => Global.init().then((value) => runApp(MultiProvider(
+//     providers: [ChangeNotifierProvider(create: (context) => Counter())],
+//     child: MyApp())));
+
+void main() {
+  Global.init().then((value) {
+    runApp(MultiProvider(
+      providers: [ChangeNotifierProvider(create: (context) => Counter())],
+      child: MyApp(),
+    ));
+  });
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -30,6 +29,13 @@ class MyApp extends StatelessWidget {
       home: WelcomePage(),
       debugShowCheckedModeBanner: false,
     );
+
+    // return CupertinoApp(
+    //   title: 'Material App',
+    //   routes: staticRouters,
+    //   home: WelcomePage(),
+    //   debugShowCheckedModeBanner: false,
+    // );
   }
 }
 
