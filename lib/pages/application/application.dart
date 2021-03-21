@@ -68,6 +68,51 @@ class _ApplicationPageState extends State<ApplicationPage>
     });
   }
 
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: _selectedIndex);
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      // appBar: _buildAppBar(),
+      appBar: AppBar(
+        title: Text('首页'),
+      ),
+      body: _buildPageView(),
+      bottomNavigationBar: _buildBottomNavigationBar(),
+      drawer: Container(
+        color: Colors.blue,
+        width: 300,
+        child: Center(
+          child: Text('drawer'),
+        ),
+      ),
+      endDrawer: Container(
+        color: Colors.orange,
+        width: 300,
+        child: Center(
+          child: Text('endDrawer'),
+        )
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+
+        },
+        child: Text('++'),
+      ),
+    );
+  }
+
   /// 顶部导航栏
   Widget _buildAppBar() {
     return transparentAppBar(
@@ -124,27 +169,6 @@ class _ApplicationPageState extends State<ApplicationPage>
               duration: const Duration(milliseconds: 200), curve: Curves.ease);
         });
       },
-    );
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _pageController = PageController(initialPage: _selectedIndex);
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _buildAppBar(),
-      body: _buildPageView(),
-      bottomNavigationBar: _buildBottomNavigationBar(),
     );
   }
 }

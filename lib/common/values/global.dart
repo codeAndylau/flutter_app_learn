@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_app_learn/common/utils/http.dart';
+// import 'package:flutter_app_learn/common/utils/http.dart';
 
 /// 全局配置
 class Global {
@@ -18,7 +18,7 @@ class Global {
 
     // 工具初始
     //await StorageUtil.init();
-    HttpUtil();
+    //HttpUtil();
 
     // 读取离线用户信息
     // var _profileJSON = StorageUtil().getJson("STORAGE_USER_PROFILE_KEY");

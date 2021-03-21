@@ -15,6 +15,7 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  
   /// 测试http数据请求
   void getHttp() async {
     try {
@@ -24,6 +25,50 @@ class _WelcomePageState extends State<WelcomePage> {
     } catch (e) {
       print(e);
     }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ScreenUtilInit(
+        designSize: Size(375.0, 812.0 - 44.0 - 34.0),
+        allowFontScaling: false,
+        builder: () {
+          return Scaffold(
+            body: Center(
+              child: Column(children: [
+                _buildPageHeadTitle(),
+                _buildPageHeadDetail(),
+                _buildFeatureItem(
+                  "feature-1",
+                  "C2ompelling photography and typography provide a beautiful reading",
+                  86,
+                ),
+                _buildFeatureItem(
+                  "feature-2",
+                  "Sector news never shares your personal data with advertisers or publishers",
+                  40,
+                ),
+                _buildFeatureItem(
+                  "feature-3",
+                  "You can get Premium to unlock hundreds of publications",
+                  40,
+                ),
+                Spacer(),
+                _buildStarButton(),
+                Spacer(),
+                Count(),
+                SizedBox(height: 35)
+              ]),
+            ),
+            floatingActionButton: FloatingActionButton(
+              onPressed: () {
+                context.read<Counter>().increment();
+              },
+              tooltip: '自增+1',
+              child: Icon(Icons.add),
+            ),
+          );
+        });
   }
 
   /// 页头标题
@@ -107,50 +152,6 @@ class _WelcomePageState extends State<WelcomePage> {
         },
       ),
     );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return ScreenUtilInit(
-        designSize: Size(375.0, 812.0 - 44.0 - 34.0),
-        allowFontScaling: false,
-        builder: () {
-          return Scaffold(
-            body: Center(
-              child: Column(children: [
-                _buildPageHeadTitle(),
-                _buildPageHeadDetail(),
-                _buildFeatureItem(
-                  "feature-1",
-                  "C2ompelling photography and typography provide a beautiful reading",
-                  86,
-                ),
-                _buildFeatureItem(
-                  "feature-2",
-                  "Sector news never shares your personal data with advertisers or publishers",
-                  40,
-                ),
-                _buildFeatureItem(
-                  "feature-3",
-                  "You can get Premium to unlock hundreds of publications",
-                  40,
-                ),
-                Spacer(),
-                _buildStarButton(),
-                Spacer(),
-                Count(),
-                SizedBox(height: 35)
-              ]),
-            ),
-            floatingActionButton: FloatingActionButton(
-              onPressed: () {
-                context.read<Counter>().increment();
-              },
-              tooltip: '自增+1',
-              child: Icon(Icons.add),
-            ),
-          );
-        });
   }
 }
 

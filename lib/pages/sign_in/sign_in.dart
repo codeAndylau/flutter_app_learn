@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_learn/common/utils/screen.dart';
+import 'package:flutter_app_learn/common/utils/utils.dart';
 import 'package:flutter_app_learn/common/values/colors.dart';
 import 'package:flutter_app_learn/common/values/shadows.dart';
 import 'package:flutter_app_learn/common/widgets/button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_app_learn/common/widgets/input.dart';
+import 'package:provider/provider.dart';
 
 class SignInPage extends StatefulWidget {
   SignInPage({Key key}) : super(key: key);
@@ -204,19 +206,28 @@ class _SignInPageState extends State<SignInPage> {
             child: Row(
               children: <Widget>[
                 btnFlatButtonBorderOnlyWidget(
-                  onPressed: () {},
+                  onPressed: () {
+                    // 亮色
+                    context.read<ThemeConfigModel>().swithThemeWithType(ThemeType.light);
+                  },
                   width: 88,
                   iconFileName: "twitter",
                 ),
                 Spacer(),
                 btnFlatButtonBorderOnlyWidget(
-                  onPressed: () {},
+                  onPressed: () {
+                    // 暗色
+                    context.read<ThemeConfigModel>().swithThemeWithType(ThemeType.dark);
+                  },
                   width: 88,
                   iconFileName: "google",
                 ),
                 Spacer(),
                 btnFlatButtonBorderOnlyWidget(
-                  onPressed: () {},
+                  onPressed: () {
+                    // 紫色
+                    context.read<ThemeConfigModel>().swithThemeWithType(ThemeType.pink);
+                  },
                   width: 88,
                   iconFileName: "facebook",
                 ),

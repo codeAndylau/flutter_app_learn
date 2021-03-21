@@ -176,7 +176,7 @@ class _MainPageState extends State<MainPage> {
   // 频道
   Widget _buildChannels() {
     return Container(
-      height: 100.h,
+      height: 150.h,
       width: lcScreenWidth,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -185,13 +185,12 @@ class _MainPageState extends State<MainPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: channelList.map<Widget>((e) {
             return Container(
-              // color: Colors.orange,
               width: 80.w,
-              height: 80.h,
+              height: 100.h,
               margin: EdgeInsets.only(left: 10),
               child: InkWell(
                 onTap: () {
-                  print("点击了频道分类是---$e");
+                  print("点击了频道分类是w---$e");
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
